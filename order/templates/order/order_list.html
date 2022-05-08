@@ -1,0 +1,37 @@
+
+<table style="width: 100%; border: 1px solid lightcyan;">
+    <tr style="background-color: lightblue; border: 1px solid lightblue;">
+        <td style="border: 1px soild lightcyan;"> 주문 시간 </td>
+        <td style="border: 1px solid lightgray;"> 음식 </td>
+        <td style="border: 1px solid lightgray;">배당 예정 시간 </td>
+        <td style="border: 1px solid lightgray;">배달 완료 여부 </td>
+    </tr>
+    <tr>
+        {% for order in order_list %}
+        <td style="border: 1px solid lightgray;">
+            {{ order.order_date}} 
+        </td>
+        <td style="border: 1px solid lightgray;">
+            {% for food in order.orderfood_set.all %}
+            {{ food.food_name }}
+            {% endfor %}
+
+        </td>
+        <td style="border: 1px solid lightgray;">
+            {% if order.estimated_time == -1 %}
+                미정
+            {% else %}
+                {{ order.estimated_time }} 분
+            {% endif %}
+
+        </td>
+        <td style="border: 1px solid lightgray;"> 
+            {% if order.deliver_finish == 0 %}
+                배송중
+            {% else %}
+                배송 완료
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>

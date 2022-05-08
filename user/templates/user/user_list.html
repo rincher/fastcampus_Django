@@ -1,0 +1,11 @@
+{% for user in user_list %}
+    <h5>{{ user.user_name }}</h5>
+    {% if user.user_type == 0 %}
+    <h5>Customer</h5>
+    {% elif user.user_type == 1 %}
+    <h5>Boss</h5>
+    {% else %}
+    <h5>Delivery</h5>
+    {% endif %}
+    
+{% endfor %}
