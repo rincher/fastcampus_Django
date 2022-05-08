@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-2w6+r1hwv2goz8fzq*z6##tehjln&p4fz$)%v*g#9x*%6n#wv2
 DEBUG = True
 
 #EC2 주소 넣어 줘야 함
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['3.35.4.146']
 
 
 # Application definition
