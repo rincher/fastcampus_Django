@@ -1,6 +1,5 @@
 from django.http import Http404, JsonResponse
 from django.shortcuts import render
-from order.models import Order
 from user.serializers import UserSerializer
 from user.models import User
 from django.views.decorators.csrf import csrf_exempt

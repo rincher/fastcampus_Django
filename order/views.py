@@ -1,9 +1,7 @@
 from datetime import datetime
 from os import stat
-from urllib import request
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
-from order import serializers
 from order.models import Shop, Menu, Order, Orderfood
 from user.models import User
 from order.serializers import MenuSerializer, ShopSerializer
